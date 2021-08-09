@@ -41,6 +41,11 @@ function createNewCard() {
   let top = card.querySelector(".top-suit");
   let bottom = card.querySelector(".bottom-suit");
   let number = card.querySelector(".number");
-  top.innerHTML = bottom.innerHTML = generateRandomSuit();
+  let symbol = (top.innerHTML = bottom.innerHTML = generateRandomSuit());
+  if (symbol === "♦" || symbol === "♥") {
+    card.style.color = "red";
+  } else {
+    card.style.color = "black";
+  }
   number.innerHTML = generateRandomNumber();
 }
